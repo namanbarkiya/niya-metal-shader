@@ -1,65 +1,136 @@
-import Image from "next/image";
+/** @paper-design/shaders-react@0.0.71 */
+import { LiquidMetal } from "@paper-design/shaders-react";
 
-export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+/**
+ * from Paper
+ * https://app.paper.design/file/01KJCK96WS65SBGQT5D61JD6RJ?page=01K4GP58P8JRM8PGBP0586VKYV&node=8S-0
+ * on Feb 26, 2026
+ */
+export default function () {
+    return (
+        <div
+            style={{
+                boxSizing: "border-box",
+                fontSynthesis: "none",
+                MozOsxFontSmoothing: "grayscale",
+                WebkitFontSmoothing: "antialiased",
+                position: "relative",
+                width: "100vw",
+                height: "100vh",
+                backgroundColor: "#000000",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                overflow: "hidden",
+            }}
+        >
+            {/* Content wrapper */}
+            <div
+                style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "60px",
+                    maxWidth: "1200px",
+                    width: "100%",
+                    padding: "40px",
+                    justifyContent: "center",
+                    flexWrap: "wrap",
+                }}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+                {/* Icon Container (z-index 10 to stay above overlay) */}
+                <div
+                    style={{ position: "relative", zIndex: 10, flexShrink: 0 }}
+                >
+                    <LiquidMetal
+                        speed={1}
+                        softness={0.1}
+                        repetition={2}
+                        shiftRed={0.3}
+                        shiftBlue={0.3}
+                        distortion={0.07}
+                        contour={0.4}
+                        scale={0.6}
+                        rotation={0}
+                        shape="diamond"
+                        angle={70}
+                        image="https://workers.paper.design/file-assets/01KJCK96WS65SBGQT5D61JD6RJ/01KJCN32T0716MHT8GAHBAJ0ZZ.svg"
+                        frame={888008.7000000121}
+                        colorBack="#00000000"
+                        colorTint="#FFFFFF"
+                        style={{
+                            width: "390px",
+                            height: "358px",
+                            backgroundColor: "#AAAAAC00",
+                        }}
+                    />
+                </div>
+
+                {/* Text Container (z-index 1 to stay below overlay) */}
+                <div
+                    style={{
+                        position: "relative",
+                        zIndex: 1,
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "0px",
+                    }}
+                >
+                    <div
+                        style={{
+                            boxSizing: "border-box",
+                            color: "#FFFFFF",
+                            fontFamily:
+                                '"Darker Grotesque", system-ui, sans-serif',
+                            fontSize: "106px",
+                            fontWeight: 800,
+                            lineHeight: "128px",
+                        }}
+                    >
+                        NIYA METAL
+                    </div>
+                    <div
+                        style={{
+                            boxSizing: "border-box",
+                            color: "#FFFFFF",
+                            fontFamily:
+                                '"Darker Grotesque", system-ui, sans-serif',
+                            fontSize: "45px",
+                            fontWeight: 800,
+                            lineHeight: "54px",
+                        }}
+                    >
+                        Industry leader since ages.
+                    </div>
+                </div>
+            </div>
+
+            {/* Multiply Blend Layer */}
+            <LiquidMetal
+                speed={1}
+                softness={0.1}
+                repetition={1}
+                shiftRed={0.13}
+                shiftBlue={0.14}
+                distortion={0.07}
+                contour={0.82}
+                scale={0.71}
+                rotation={0}
+                shape="none"
+                angle={200}
+                frame={1363289.7360000284}
+                colorBack="#00000000"
+                colorTint="#FFFFFF"
+                style={{
+                    backgroundColor: "#AAAAAC00",
+                    position: "absolute",
+                    inset: 0,
+                    width: "100%",
+                    height: "100%",
+                    mixBlendMode: "multiply",
+                    zIndex: 5,
+                    pointerEvents: "none",
+                }}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
         </div>
-      </main>
-    </div>
-  );
+    );
 }
